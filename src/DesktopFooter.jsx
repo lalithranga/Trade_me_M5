@@ -1,7 +1,7 @@
 const DesktopFooter = () => {
   return (
     <footer className="text-[12px] hidden xl:block">
-      <section className="py-[20px] px-[140px]">
+      <section className="py-[20px] px-[160px]">
         <p className="text-[14px] inline pr-[40px] pb-[9px] text-[#8A8685]">
           We’re upgrading some of our systems
         </p>
