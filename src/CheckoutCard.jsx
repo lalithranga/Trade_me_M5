@@ -1,6 +1,6 @@
 const CheckoutCard = () => {
   return (
-    <div className="rounded-[2px] w-full bg-[#F6F5F4] flex gap-[8px] mb-[28px]">
+    <div className="rounded-[2px] w-full max-h-[142px] bg-[#F6F5F4] flex gap-[8px]">
       <img
         className="bg-[#E7E6E3] w-[148px] xl:w-[190px] h-[112px] xl:h-[142px]"
         src="/"

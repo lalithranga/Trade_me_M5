@@ -8,7 +8,7 @@ const SuccessPage = () => {
       </h1>
       <div className="xl:flex xl:flex-row-reverse xl:justify-between">
         <CheckoutCard />
-        <p className="text-[16px] text-[#8A8685] leading-[18px] xl:w-[1468px] xl:pr-[44px]">
+        <p className="text-[16px] text-[#8A8685] leading-[18px] xl:w-[1468px] xl:pr-[44px] mt-[28px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -18,8 +18,8 @@ const SuccessPage = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div className="xl:flex xl:flex-row-reverse xl:justify-between pt-[176px]">
-        <p className="text-[20px] text-center py-[16px]">
+      <div className="xl:flex xl:flex-row-reverse xl:justify-between xl:pt-[176px]">
+        <p className="text-[20px] font-[700] text-center py-[16px]">
           Total with shipping $49
         </p>
         <button className="text-[16px] text-[#3E75CB] border border-[#3E75CB] rounded-[5px] w-full xl:w-auto xl:px-[8px] h-[48px]">
