@@ -9,17 +9,13 @@ const ShippingPage = () => {
       <div className="xl:flex xl:flex-row-reverse xl:justify-between gap-[300px]">
         <CheckoutCard />
         <form>
-          <label
-            htmlFor="adress"
-            className="text-[#8A8685] text-[14px] block mt-[16px] "
-          >
+          <label className="text-[#8A8685] text-[14px] block mt-[16px] ">
             Please enter your address to calculate shipping costs
+            <input
+              className="w-full border border-[#D9D9D9] rounded-[4px] h-[48px] mt-[8px] px-[8px]"
+              type="text"
+            />
           </label>
-          <input
-            id="adress"
-            className="w-full border border-[#D9D9D9] rounded-[4px] h-[48px] mt-[8px] px-[8px]"
-            type="text"
-          />
 
           <div className="text-[#8A8685] text-[14px] xl:w-[360px]">
             <p className="text-[16px] py-[16px]">
@@ -55,7 +51,7 @@ const ShippingPage = () => {
                 $50.00
               </span>
             </label>
-            <label className="flex justify-between items-center p-2 rounded-b-[4px] border-[0.5px] border-[#9D9996] cursor-pointer hover:bg-gray-200 h-[48px]">
+            <label className="flex justify-between items-center p-[8px] rounded-b-[4px] border-[0.5px] border-[#9D9996] cursor-pointer hover:bg-gray-200 h-[48px]">
               <input
                 type="radio"
                 name="shipping"
