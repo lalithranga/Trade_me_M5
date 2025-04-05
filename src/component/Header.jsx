@@ -16,10 +16,11 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-function LandingPage() {
+
+function Header() {
   return (
     <>
-      <div className="flex flex-col bg-[#ffffff] h-screen">
+      <div className="flex flex-col bg-[#ffffff] h-[620px]">
         {/* Top Navigation Links (Visible only on xl and larger screens) */}
         <div className="hidden 2xl:flex justify-center space-x-28 text-gray-600 font-medium py-2 bg-[#f6f5f4] h-[68px]">
           {/* Left Side Links */}
@@ -127,27 +128,32 @@ function LandingPage() {
         </div>
 
         {/* Navigation Bar (Visible only on xl and larger screens) */}
-        <div
-          className="hidden xl:flex fixed top-[360px] 2xl:top-[475px] left-1/2 transform -translate-x-1/2 
-            w-[1250px] 2xl:w-[1450px] 3xl:w-[1650px] h-[60px] 2xl:h-[80px] 
-            flex rounded-lg outline outline-[15px] outline-gray-100"
-        >
-          <div className="flex-1 bg-red-600 flex justify-center items-center text-white font-bold text-3xl">
-            Marketplace
-          </div>
-          <div className="flex-1 bg-orange-500 flex justify-center items-center text-white font-bold text-3xl">
-            Jobs
-          </div>
-          <div className="flex-1 bg-gray-600 flex justify-center items-center text-white font-bold text-3xl">
-            Motors
-          </div>
-          <div className="flex-1 bg-green-600 flex justify-center items-center text-white font-bold text-3xl">
-            Property
-          </div>
-          <div className="flex-1 bg-gray-800 flex justify-center items-center text-white font-bold text-3xl">
-            Services
-          </div>
-        </div>
+        <div className="hidden xl:flex sticky top-[260px] z-50 justify-center -mt-12">
+  <div
+    className="flex w-full max-w-[1400px] h-[60px] 2xl:h-[80px] rounded-lg outline outline-[10px] outline-gray-100 overflow-hidden bg-white shadow-md"
+  >
+    <div className="flex-1 bg-red-600 flex justify-center items-center text-white font-bold text-2xl xl:text-3xl">
+      Marketplace
+    </div>
+    <div className="flex-1 bg-orange-500 flex justify-center items-center text-white font-bold text-2xl xl:text-3xl">
+      Jobs
+    </div>
+    <div className="flex-1 bg-gray-600 flex justify-center items-center text-white font-bold text-2xl xl:text-3xl">
+      Motors
+    </div>
+    <div className="flex-1 bg-green-600 flex justify-center items-center text-white font-bold text-2xl xl:text-3xl">
+      Property
+    </div>
+    <div className="flex-1 bg-gray-800 flex justify-center items-center text-white font-bold text-2xl xl:text-3xl">
+      Services
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
         {/* Categories Section */}
         <div className="grid grid-cols-2 gap-3 p-4 bg-[#f6f5f4]">
@@ -187,9 +193,10 @@ function LandingPage() {
             <IoIosArrowForward className="text-blue-600 ml-12" />
           </div>
         </div>
+      
       </div>
     </>
   );
 }
 
-export default LandingPage;
+export default Header;
