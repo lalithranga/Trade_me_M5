@@ -20,9 +20,9 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <>
-      <div className="flex flex-col bg-[#ffffff] h-[620px]">
+      <div className="flex flex-col bg-[#ffffff] h-[620px] ">
         {/* Top Navigation Links (Visible only on xl and larger screens) */}
-        <div className="hidden 2xl:flex justify-center space-x-28 text-gray-600 font-medium py-2 bg-[#f6f5f4] h-[68px]">
+        <div className="hidden 2xl:flex justify-evenly space-x-28 text-gray-600 font-medium py-2 bg-[#f6f5f4] h-[68px] ">
           {/* Left Side Links */}
           <div className="flex space-x-[55px]">
             <span className="text-2xl">Trade Me</span>
@@ -43,7 +43,7 @@ function Header() {
         {/* Top bar (Logo and Icon Links) */}
         <div className="flex flex-row h-[40px] bg-[#ffffff] mt-2 relative md:w-full md:justify-between md:items-center p-3 md:h-[50px] lg:h-[60px] xl:h-[70px] 2xl:h-[85px]">
           {/* Logo Section */}
-          <div className="w-[190px] h-[30px] ml-3 mt-0 md:w-[250px] md:h-[40px] lg:w-[300px] lg:h-[50px] xl:w-[350px] xl:h-[60px] 2xl:w-[400px] 2xl:h-[70px]">
+          <div className="w-[190px] h-[30px] sm:ml-[20px] mt-0 md:w-[250px] md:h-[40px] lg:w-[300px] lg:h-[50px] xl:w-[350px] xl:h-[60px] 2xl:w-[400px] 2xl:h-[70px] lg:ml-[110px]">
             <img
               src="/image.jpg"
               alt="logo"
@@ -52,7 +52,7 @@ function Header() {
           </div>
 
           {/* Icon Links (Watchlist, Favourites, etc.) */}
-          <div className="flex flex-row justify-end space-x-6 md:mr-10 sm-hidden">
+          <div className="flex flex-row justify-end space-x-6 md:mr-10 sm-hidden lg:mr-[170px]">
             {/* Always visible */}
             <div className="flex flex-col justify-center items-center ml-10 lg:flex-row lg:space-x-6">
               <div className="text-[15px] md:text-[23px] lg:text-[35px]">
@@ -96,22 +96,22 @@ function Header() {
         </div>
 
         {/* Blue panel with welcome message */}
-        <div className="flex flex-col mt-3 h-[230px] w-full bg-gradient-to-r from-blue-900 to-blue-400 md:h-[250px] lg:h-[260px] xl:h-[300px] 2xl:h-[340px] relative">
-          <div className="flex flex-col md:flex-row">
-            <h1 className='text-[45px] font-black font-["Barlow_Condensed"] mt-3 text-[#E7B2DA] ml-3 leading-none  md:text-[60px] lg:text-[70px] xl:text-[80px] 2xl:text-[110px]'>
+        <div className="flex flex-col mt-3 h-[230px] w-full bg-gradient-to-r from-blue-900 to-blue-400 md:h-[250px] lg:h-[260px] xl:h-[300px] 2xl:h-[340px] relative ">
+          <div className="flex flex-col md:flex-row lg:ml-[150px]">
+            <h1 className='text-[45px] font-black font-["Barlow_Condensed"] mt-3 text-[#E7B2DA]  leading-none  md:text-[60px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px]'>
               KIA ORA! READY TO
             </h1>
-            <h1 className='text-[45px] font-["Barlow_Condensed"] text-[#E7B2DA] ml-3 mt-3 leading-none font-bold md:text-[60px] lg:text-[70px] xl:text-[80px] 2xl:text-[110px]'>
+            <h1 className='text-[45px] font-["Barlow_Condensed"] text-[#E7B2DA] ml-3 mt-3 leading-none font-bold md:text-[60px] lg:text-[70px] xl:text-[80px] 2xl:text-[90px]'>
               FIND YOUR WAY!
             </h1>
           </div>
           {/* Search bar section */}
-          <div className="relative flex flex-row mt-3">
+          <div className="relative flex flex-row mt-3 lg:ml-[150px]">
             <div className="relative flex-row">
               <input
                 type="text"
                 placeholder="Search all for Trade Me"
-                className="bg-white w-[376px] h-[60px] rounded-lg ml-3 mt-4 pl-10 pr-[80px] md:w-[700px] lg:w-[800px] xl:w-[900px] 2xl:w-[1000px] text-[25px] md:text-[25px] "
+                className="bg-white w-[376px] h-[60px] rounded-lg mt-4 pl-10 pr-[80px] md:w-[700px] lg:w-[800px] xl:w-[900px] 2xl:w-[1000px] text-[25px] md:text-[25px] "
               />
               <div className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400">
                 <IoIosSearch size={30} />
@@ -128,9 +128,9 @@ function Header() {
         </div>
 
         {/* Navigation Bar (Visible only on xl and larger screens) */}
-        <div className="hidden xl:flex sticky top-[260px] z-50 justify-center -mt-12">
+        <div className="hidden xl:flex sticky top-[260px] z-50 -mt-12 ">
   <div
-    className="flex w-full max-w-[1400px] h-[60px] 2xl:h-[80px] rounded-lg outline outline-[10px] outline-gray-100 overflow-hidden bg-white shadow-md"
+    className="flex w-full lg:w-[1740px] md:w-[1400px] h-[60px] 2xl:h-[80px] rounded-lg outline outline-[10px] outline-gray-100 overflow-hidden bg-white shadow-md lg:ml-[150px]"
   >
     <div className="flex-1 bg-red-600 flex justify-center items-center text-white font-bold text-2xl xl:text-3xl">
       Marketplace
@@ -156,7 +156,7 @@ function Header() {
 
 
         {/* Categories Section */}
-        <div className="grid grid-cols-2 gap-3 p-4 bg-[#f6f5f4]">
+        <div className="grid grid-cols-2 gap-3 p-4 bg-[#f6f5f4] lg:ml-[150px]">
           {/* Marketplace */}
           <div className="flex items-center justify-start w-[170px] h-[50px] border rounded-md px-3 md:w-[300px] xl:hidden bg-[#ffffff] border-[#e0e0e0]">
             <FaShoppingBag className="text-red-500 mr-2" />
