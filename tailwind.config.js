@@ -1,11 +1,18 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        ncolour: "#1E40AF", // Replace with your desired hex code
+      },
+      screens: {
+        "3xl": "1800px", // Your custom 3xl breakpoint
+      },
+    },
   },
   plugins: [],
 }
