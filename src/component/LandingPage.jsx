@@ -14,6 +14,7 @@ import { AiOutlineHeart } from "react-icons/ai"; // Favourites Icon
 import { BiPencil } from "react-icons/bi"; // Start a Listing Icon
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 function LandingPage() {
   return (
@@ -114,10 +115,12 @@ function LandingPage() {
               <div className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400">
                 <IoIosSearch size={30} />
               </div>
+
+              {/* Search button */}
               <div className="absolute right-[4px] top-[46px] transform -translate-y-1/2">
-                <div className="bg-[#279be9] w-[70px] h-[55px] rounded-lg flex items-center justify-center">
+                <Link to="/search" className="bg-[#279be9] w-[70px] h-[55px] rounded-lg flex items-center justify-center">
                   <IoIosSearch size={30} className="text-white" />
-                </div>
+                </Link>
               </div>
             </div>
           </div>
