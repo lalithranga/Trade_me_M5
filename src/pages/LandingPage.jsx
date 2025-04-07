@@ -1,21 +1,16 @@
 import Card from "../component/card";
 import Header from "../component/Header";
 import ProductCard from "../component/ProductCard";
-import TrendingCategories from "../component/TrandingRedCard";
-
+import TopHeader from "../component/TopHeader";
 
 function LandingPage() {
   return (
     <div>
+      <TopHeader />
       <Header />
       <Card />
-  
       <ProductCard />
-      <TrendingCategories />
       <ProductCard />
-      
-
-     
     </div>
   );
 }

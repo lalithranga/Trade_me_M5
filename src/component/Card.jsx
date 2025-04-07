@@ -3,7 +3,7 @@ import "@fontsource/inter";
 
 function Card() {
   return (
-    <div className="bg-[#f7f6f4] w-full px-4 py-6 lg:px-6">
+    <div className="bg-[#f7f6f4] w-full px-4 py-1 lg:px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto max-w-screen-xl">
         {/* Card 1 */}
         <div className="bg-white rounded-xl shadow-sm p-6 my-2 flex flex-col justify-between h-[320px] w-full">

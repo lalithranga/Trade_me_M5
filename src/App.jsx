@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import HomePage from "./pages/HomePage";
+import ListningPage from "./pages/ListningPage";
+
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage/>} />
         {/* Click LandingPage search button */}
-        <Route path="/search" element={<HomePage/>} />
+        <Route path="/search" element={<ListningPage/>} />
       </Routes>
     </BrowserRouter>
   );
