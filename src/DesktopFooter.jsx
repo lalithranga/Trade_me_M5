@@ -1,7 +1,7 @@
 const DesktopFooter = () => {
   return (
-    <footer className="text-[12px] hidden xl:block">
-      <section className="py-[20px] px-[160px]">
+    <footer className="text-[12px] hidden xl:block ">
+      <section className="py-[20px] max-w-screen-xl mx-auto">
         <p className="text-[14px] inline pr-[40px] pb-[9px] text-[#8A8685]">
           We’re upgrading some of our systems
         </p>
@@ -23,8 +23,8 @@ const DesktopFooter = () => {
         </a>
       </section>
       <div className="bg-[#FFAC00] h-[9px]"></div>
-      <section className="px-[160px] text-[#9D9996] pb-[88px]">
-        <div className="grid grid-cols-[160px_1fr_auto] items-center pt-[20px] border-b-[0.5px] border-[#8A8685] pb-[32px] mb-[36px] pr-[160px]">
+      <section className="px-[160px] text-[#9D9996] pb-[88px] ">
+        <div className="grid grid-cols-[160px_1fr_auto] items-center pt-[20px] border-b-[0.5px] border-[#8A8685] pb-[32px] mb-[36px] pr-[160px] max-w-screen-xl mx-auto">
           <img src="/trademe-logo.png" alt="" />
           <nav className="flex justify-evenly">
             <a href="">List an item</a>
@@ -39,7 +39,7 @@ const DesktopFooter = () => {
           </div>
         </div>
 
-        <div className="text-[#9D9996] display flex justify-between pr-[160px]">
+        <div className="text-[#9D9996] display flex justify-between pr-[160px] max-w-screen-xl mx-auto">
           <div>
             <h3 className="text-[14px] pb-[5px]">Marketplace</h3>
             <nav className="grid gap-[5px] text-[12px]">
@@ -96,8 +96,8 @@ const DesktopFooter = () => {
           </div>
         </div>
       </section>
-      <section className="py-[20px] px-[160px] bg-[#F5F5F5]">
-        <div className="flex w-full justify-between items-center ">
+      <section className="py-[20px] px-[160px] bg-[#F5F5F5] h-screen">
+        <div className="flex w-full justify-between items-center max-w-screen-xl mx-auto">
           <div className="flex pr-[52px]">
             <img className="pr-[2px]" src="/copyright-small.png" alt="" />
             <p className="text-[#9D9996]">2024 Trade Me Limited</p>
