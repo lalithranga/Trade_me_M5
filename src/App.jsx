@@ -1,10 +1,18 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import ListningPage from "./pages/ListningPage";
+
+
 
 function App() {
   return (
-    <>
-      <h1 className="text-4xl font-bold underline">Hello world!</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage/>} />
+        {/* Click LandingPage search button */}
+        <Route path="/search" element={<ListningPage/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
