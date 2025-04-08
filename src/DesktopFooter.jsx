@@ -23,7 +23,7 @@ const DesktopFooter = () => {
         </a>
       </section>
       <div className="bg-[#FFAC00] h-[9px]"></div>
-      <section className="px-[160px] text-[#9D9996] pb-[88px] ">
+      <section className="text-[#9D9996] pb-[88px] ">
         <div className="grid grid-cols-[160px_1fr_auto] items-center pt-[20px] border-b-[0.5px] border-[#8A8685] pb-[32px] mb-[36px] pr-[160px] max-w-screen-xl mx-auto">
           <img src="/trademe-logo.png" alt="" />
           <nav className="flex justify-evenly">
