@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import ListningPage from "./pages/ListningPage";
-import ResultsPage from "./pages/ResultsPage";
+import SearchResultsPage from "./pages/SearchResultsPage";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {/* Click LandingPage search button */}
-        <Route path="/search" element={<ResultsPage />} />
+        <Route path="/search" element={<SearchResultsPage />} />
       </Routes>
     </BrowserRouter>
   );

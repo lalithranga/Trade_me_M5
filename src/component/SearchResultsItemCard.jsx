@@ -1,4 +1,4 @@
-const ResultsItemCard = ({
+const SearchResultsItemCard = ({
   item: {
     location,
     closing_date,
@@ -47,4 +47,4 @@ const ResultsItemCard = ({
   );
 };
 
-export default ResultsItemCard;
+export default SearchResultsItemCard;
