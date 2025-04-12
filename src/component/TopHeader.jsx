@@ -49,35 +49,36 @@ function TopHeader() {
 
         {/* Icon Links */}
         <div className="flex items-center space-x-6">
-          
-          {/* Watchlist */}
-          <div className="flex flex-col items-center lg:flex-row lg:space-x-2">
-            <IoMdListBox className="text-[22px]" />
-            <span className="text-[22px] font-inter text-[#9D9996]">Watchlist</span>
-          </div>
 
-          {/* Favourites */}
-          <div className="flex flex-col items-center lg:flex-row lg:space-x-2">
-            <AiOutlineHeart className="text-[22px]" />
-            <span className="text-[22px] font-inter text-[#9D9996]">Favourites</span>
-          </div>
+{/* Watchlist */}
+<div className="flex flex-col items-center lg:flex-row lg:space-x-2">
+  <IoMdListBox className="text-[14px] md:text-[14px] lg:text-[16px]" />
+  <span className="text-[14px] md:text-[14px] lg:text-[16px] font-inter text-[#9D9996]">Watchlist</span>
+</div>
 
-          {/* 2XL only icons */}
-          <div className="hidden 2xl:flex items-center space-x-6 mr-4">
-            {/* Start a Listing */}
-            <div className="flex flex-col items-center lg:flex-row lg:space-x-2">
-              <BiPencil className="text-[22px]" />
-              <span className="text-[22px] font-inter text-[#9D9996]">Start a Listing</span>
-            </div>
+{/* Favourites */}
+<div className="flex flex-col items-center lg:flex-row lg:space-x-2">
+  <AiOutlineHeart className="text-[14px] md:text-[14px] lg:text-[16px]" />
+  <span className="text-[14px] md:text-[14px] lg:text-[16px] font-inter text-[#9D9996]">Favourites</span>
+</div>
 
-            {/* My Trade Me */}
-            <div className="flex flex-col items-center lg:flex-row lg:space-x-2">
-              <FaUserCircle className="text-[22px]" />
-              <span className="text-[22px] font-inter text-[#9D9996]">My Trade Me</span>
-            </div>
-          </div>
+{/* 2XL only icons */}
+<div className="hidden 2xl:flex items-center space-x-6 mr-4">
+  {/* Start a Listing */}
+  <div className="flex flex-col items-center lg:flex-row lg:space-x-2">
+    <BiPencil className="text-[14px] md:text-[14px] lg:text-[16px]" />
+    <span className="text-[14px] md:text-[14px] lg:text-[16px] font-inter text-[#9D9996]">Start a Listing</span>
+  </div>
 
-        </div>
+  {/* My Trade Me */}
+  <div className="flex flex-col items-center lg:flex-row lg:space-x-2">
+    <FaUserCircle className="text-[14px] md:text-[14px] lg:text-[16px]" />
+    <span className="text-[14px] md:text-[14px] lg:text-[16px] font-inter text-[#9D9996]">My Trade Me</span>
+  </div>
+</div>
+
+</div>
+
       </div>
     </>
   );
