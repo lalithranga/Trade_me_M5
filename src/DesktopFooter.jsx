@@ -96,7 +96,7 @@ const DesktopFooter = () => {
           </div>
         </div>
       </section>
-      <section className="py-[20px] px-[160px] bg-[#F5F5F5] h-screen">
+      <section className="py-[20px] px-[160px] bg-[#F5F5F5]">
         <div className="flex w-full justify-between items-center max-w-screen-xl mx-auto">
           <div className="flex pr-[52px]">
             <img className="pr-[2px]" src="/copyright-small.png" alt="" />

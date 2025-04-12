@@ -50,4 +50,14 @@ export function compareCart() {
       console.log("Item not found in cart:", title);
     }
   }
+  export function clearCart() {
+    let cart=localStorage.getItem("cart");
+    if (cart === null) {
+      console.log("Cart is already empty");
+      return;
+    }
+    cart = { title: [] };
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("Cart cleared");
+  }
   

@@ -6,12 +6,15 @@ import Compare from "./comapre";
 
 function Home() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <TopHeader />
-      <Routes>
-  <Route index element={<ListningPage />} /> {/* for /search */}
-  <Route path="compare" element={<Compare />} />
-</Routes>
+      
+      <main className="flex-grow">
+        <Routes>
+          <Route index element={<ListningPage />} /> {/* for /search */}
+          <Route path="compare" element={<Compare />} />
+        </Routes>
+      </main>
 
       <Footer />
     </div>

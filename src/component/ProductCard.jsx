@@ -29,40 +29,42 @@ function ProductCard() {
           <p>Loading...</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
-              <div className="flex flex-col w-full" key={product._id}>
-                <div className="relative aspect-square w-full mb-4">
-                  <img
-                    src={product.image || "/default-image.jpg"}
-                    alt={product.title}
-                    className="w-full h-full object-cover rounded"
-                  />
-                  <div className="absolute top-0 right-0">
-                    <div className="text-sm font-bold p-1">
-                      <img
-                        src="/watchlist.png"
-                        alt="watchlist"
-                        className="w-6 h-6 object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
+  {products.map((product) => (
+    <div className="flex flex-col w-full h-full bg-white rounded shadow p-4" key={product._id}>
+      <div className="relative aspect-square w-full mb-4">
+        <img
+          src={product.image || "/default-image.jpg"}
+          alt={product.title}
+          className="w-full h-full object-cover rounded"
+        />
+        <div className="absolute top-0 right-0">
+          <img
+            src="/watchlist.png"
+            alt="watchlist"
+            className="w-6 h-6 object-cover"
+          />
+        </div>
+      </div>
 
-                <div className="flex justify-between text-sm text-gray-500 mb-1">
-                  <span>{product.location}</span>
-                  <span>
-                    Listed:{" "}
-                    <span className="text-red-600">{product.listedDate}</span>
-                  </span>
-                </div>
-                <h3 className="font-bold text-lg mb-2">{product.title}</h3>
-                <div className="text-sm text-gray-500 mb-1">
-                  {product.description}
-                </div>
-                <div className="font-bold text-lg">${product.price}</div>
-              </div>
-            ))}
+      <div className="flex flex-col justify-between flex-grow">
+        <div>
+          <div className="flex justify-between text-sm text-gray-500 mb-1">
+            <span>{product.location}</span>
+            <span>
+              Listed: <span className="text-red-600">{product.listedDate}</span>
+            </span>
           </div>
+          <h3 className="font-bold text-lg mb-2">{product.title}</h3>
+          <div className="text-sm text-gray-500 mb-1">{product.description}</div>
+        </div>
+
+        <div className="font-bold text-lg mt-4 pb-7">${product.price}</div>
+      </div>
+    </div>
+  ))}
+</div>
+
+         
         )}
       </div>
     </div>

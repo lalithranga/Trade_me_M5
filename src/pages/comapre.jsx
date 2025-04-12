@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { removeFromCart } from "../utils.jsx/compareCart";
+import { clearCart, removeFromCart } from "../utils.jsx/compareCart";
 import { useNavigate } from "react-router-dom";
 
 function Compare() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || { title: [] };
@@ -43,17 +44,46 @@ function Compare() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-6">
+  
+<div >
+<div className="bg-red-600 text-white text-sm font-semibold py-2 px-4">
+    <div>
+  <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4 py-2">
+    <div className="flex space-x-4">
+      <button className="hover:underline">Browse Marketplace</button>
+      <button className="hover:underline">Stores</button>
+      <button className="hover:underline">Detail</button>
+      <button className="hover:underline">Book a courier</button>
+    </div>
+    <button className=" text-white font-semibold px-4 py-1 rounded hover:bg-gray-100">
+      List an item
+    </button>
+  </div>
+  </div>
+
+</div>
+<div className="max-w-screen-xl mx-auto px-4 py-6"> 
+
+
       <div className="flex items-center justify-between mb-4">
+        
+
+
         <h1 className="text-xl font-semibold">Compare listings</h1>
         <div className="flex space-x-2">
-          <button className="flex items-center text-blue-500 hover:text-blue-700">
+          <button className="flex items-center text-blue-500 hover:text-blue-700" onClick={() => navigate("/search")}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Back to search
           </button>
-          <button className="text-blue-500 hover:text-blue-700">Remove all</button>
+          <button className="text-blue-500 hover:text-blue-700" onClick={() =>{ clearCart();
+          navigate("/search");  // Clear the cart and navigate to the compare page
+          
+        
+        }}>
+        
+            Remove all</button>
         </div>
       </div>
 
@@ -185,10 +215,41 @@ function Compare() {
                     </div>
                   </div>
                 </div>
+                {/* Seller Information */}
+<div className="border-t mt-4 pt-4 px-4 pb-6">
+  <div className="border rounded-lg p-4 text-center">
+    <img 
+      src="https://www.the-sun.com/wp-content/uploads/sites/6/2023/03/OP-OMF-FAKE-CAR-DEALER-.jpg?strip=all&quality=100&w=1920&h=1080&crop=1" 
+      alt="Seller logo" 
+      className="w-16 h-16 mx-auto rounded-full object-cover mb-2"
+    />
+    <h4 className="font-semibold">Ashley</h4>
+    <div className="flex justify-center mt-1 mb-1">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.965a1 1 0 00.95.69h4.19c.969 0 1.371 1.24.588 1.81l-3.396 2.465a1 1 0 00-.364 1.118l1.286 3.965c.3.921-.755 1.688-1.538 1.118l-3.396-2.465a1 1 0 00-1.175 0l-3.396 2.465c-.783.57-1.838-.197-1.538-1.118l1.286-3.965a1 1 0 00-.364-1.118L2.045 9.392c-.783-.57-.38-1.81.588-1.81h4.19a1 1 0 00.95-.69l1.286-3.965z" />
+        </svg>
+      ))}
+    </div>
+    <p className="text-sm text-gray-600 mb-2">(75287)</p>
+    <div className="flex justify-center space-x-2 mb-2">
+      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">Address verified</span>
+      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">In trade</span>
+    </div>
+    <p className="text-sm text-gray-600 mb-1">99.4% positive feedback</p>
+    <p className="text-sm text-gray-600">Seller located in</p>
+    <p className="text-sm text-gray-600 mb-3">Auckland City, Auckland</p>
+    <button className="w-full border border-blue-500 text-blue-500 hover:bg-blue-50 py-2 rounded font-medium">
+      Visit Shop
+    </button>
+  </div>
+</div>
+
               </div>
             </div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
