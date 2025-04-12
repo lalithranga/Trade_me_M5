@@ -3,6 +3,7 @@ import ResultsItemCard from "../component/SearchResultsItemCard";
 import TopHeader from "../component/TopHeader";
 import Footer from "../Footer";
 import ResultsSearchBox from "../component/SearchResultsSearchBox";
+import { Link } from "react-router-dom";
 
 const SearchResultsPage = () => {
   const [items, setItems] = useState([]);
@@ -20,7 +21,7 @@ const SearchResultsPage = () => {
 
   return (
     <div>
-      <TopHeader />
+     
       <h1 className="max-w-screen-xl mx-auto px-[20px] xl:px-0 font-bold text-[20px]">
         Search Results
       </h1>
@@ -50,12 +51,12 @@ const SearchResultsPage = () => {
             items.map((item) => <ResultsItemCard key={item._id} item={item} />)}
         </section>
 
-        <button className="fixed right-[24px] bottom-[24px] w-[90px] h-[36px] bg-[#3E74CB] text-white rounded-[16px] font-bold border border-[#3E74CB]">
+        <Link to="/search/compare" className="fixed right-[24px] bottom-[24px] w-[90px] h-[36px] bg-[#3E74CB] text-white rounded-[16px] font-bold border border-[#3E74CB]">
           Compare
-        </button>
+        </Link>
       </main>
 
-      <Footer />
+     
     </div>
   );
 };
