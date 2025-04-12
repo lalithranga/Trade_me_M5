@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const SearchResultsPage = () => {
   const [items, setItems] = useState([]);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -19,9 +20,24 @@ const SearchResultsPage = () => {
     fetchItems();
   }, []);
 
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || { title: [] };
+    setCount(cart.title.length);
+
+    const handleStorageChange = () => {
+      const updatedCart = JSON.parse(localStorage.getItem("cart")) || {
+        title: [],
+      };
+      setCount(updatedCart.title.length);
+    };
+
+    window.addEventListener("compareCartChanged", handleStorageChange);
+    return () =>
+      window.removeEventListener("compareCartChanged", handleStorageChange);
+  }, []);
+
   return (
     <div>
-     
       <h1 className="max-w-screen-xl mx-auto px-[20px] xl:px-0 font-bold text-[20px]">
         Search Results
       </h1>
@@ -51,12 +67,20 @@ const SearchResultsPage = () => {
             items.map((item) => <ResultsItemCard key={item._id} item={item} />)}
         </section>
 
-        <Link to="/search/compare" className="fixed right-[24px] bottom-[24px] w-[90px] h-[36px] bg-[#3E74CB] text-white rounded-[16px] font-bold border border-[#3E74CB]">
-          Compare
-        </Link>
+        <div className="fixed right-[24px] bottom-[24px]">
+          <Link
+            to="/search/compare"
+            className="relative w-[90px] h-[36px] bg-[#3E74CB] text-white rounded-[16px] font-bold border border-[#3E74CB] flex items-center justify-center"
+          >
+            Compare
+            {count > 0 && (
+              <div className="absolute -top-2 -left-2 w-[24px] h-[24px] rounded-full border border-[#3E74CB] bg-white text-[#3E74CB] text-xs font-bold flex items-center justify-center">
+                {count < 10 ? `0${count}` : count}
+              </div>
+            )}
+          </Link>
+        </div>
       </main>
-
-     
     </div>
   );
 };
