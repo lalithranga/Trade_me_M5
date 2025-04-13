@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const SearchResultsPage = () => {
   const [items, setItems] = useState([]);
   const [count, setCount] = useState(0);
+  const [filteredItems, setFilteredItems] = useState(items);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -17,6 +19,10 @@ const SearchResultsPage = () => {
 
     fetchItems();
   }, []);
+
+  useEffect(() => {
+    setFilteredItems(items); // Update filteredItems when items changes
+  }, [items]);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || { title: [] };
@@ -56,8 +62,8 @@ const SearchResultsPage = () => {
 
     const sortFunction = sortFunctions[event.target.value];
     if (sortFunction) {
-      const sortedItems = [...items].sort(sortFunction);
-      setItems(sortedItems);
+      const sortedItems = [...filteredItems].sort(sortFunction);
+      setFilteredItems(sortedItems);
     }
   };
 
@@ -67,7 +73,12 @@ const SearchResultsPage = () => {
         Search Results
       </h1>
       <main className="bg-[#F5F5F5]">
-        <ResultsSearchBox />
+        <ResultsSearchBox
+          items={items}
+          setFilteredItems={setFilteredItems}
+          searchText={searchText}
+          setSearchText={setSearchText}
+        />
         <section className="max-w-screen-xl mx-auto py-[20px] flex gap-[12px] place-content-center xl:place-content-start">
           <select
             className="h-[38px] w-[252px] border-[0.5px]"
@@ -104,12 +115,17 @@ const SearchResultsPage = () => {
           </div>
         </section>
         <div className="w-[346px] max-w-screen-xl mx-auto xl:w-auto font-bold">
-          <p className="">Showing 21,137 results for ‘desk’</p>
+          <p className="">
+            Showing {filteredItems.length} result
+            {filteredItems.length > 1 && "s"}
+          </p>
         </div>
 
         <section className="max-w-screen-xl mx-auto grid gap-[16px] justify-center xl:grid-cols-4 py-[32px]">
-          {items.length > 0 &&
-            items.map((item) => <ResultsItemCard key={item._id} item={item} />)}
+          {filteredItems.length > 0 &&
+            filteredItems.map((item) => (
+              <ResultsItemCard key={item._id} item={item} />
+            ))}
         </section>
 
         <div className="fixed right-[24px] bottom-[24px]">
