@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import CheckoutCard from "../component/CheckoutCard";
-import Footer from "../component/Footer";
-import TopHeader from "../component/TopHeader";
+
 
 const PaymentPage = () => {
   return (
     <>
-      <TopHeader />
+ 
       <main className="px-[24px] xl:px-[160px] pb-[64px]]">
         <h1 className="text-[20px] font-[700] py-[16px] leading-[24px] xl:pb-0">
           Payment
@@ -124,7 +123,7 @@ const PaymentPage = () => {
             <p className="text-[20px] font-[700] text-center ">Total $29</p>
           </div>
           <div className="xl:pt-[16px]">
-            <Link to="/shipping">
+            <Link to="/search/shipping">
               <button className="mr-[16px] text-[16px] text-[#FFFFFF] bg-[#3E75CB] rounded-[5px] w-full xl:w-auto xl:px-[12px] h-[38px] mb-[12px] xl:h-[48px]">
                 Continue to shipping
               </button>
@@ -138,7 +137,7 @@ const PaymentPage = () => {
           </div>
         </div>
       </main>
-      <Footer />
+
     </>
   );
 };

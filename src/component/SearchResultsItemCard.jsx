@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { addToCart } from "../utils.jsx/compareCart.jsx";
 
 const SearchResultsItemCard = ({
@@ -35,7 +36,7 @@ const SearchResultsItemCard = ({
             Add to compare
           </button>
           <div>
-            <p>Buy now</p>
+            <Link to="/search/payment">Buy now</Link>
             <p className="font-bold">${price}</p>
           </div>
         </div>
