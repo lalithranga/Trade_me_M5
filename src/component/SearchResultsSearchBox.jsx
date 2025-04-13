@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const SearchResultsSearchBox = ({
   items,
@@ -12,12 +12,19 @@ const SearchResultsSearchBox = ({
   const [newAndUsed, setNewAndUsed] = useState("");
   const [shipping, setShipping] = useState("");
 
+  // Set default search text from local storage
+  useState(() => {  
+    setSearchText(localStorage.getItem("searchText"));
+  }, []);
+
   return (
     <section className="bg-white">
       <div className="max-w-screen-xl mx-auto px-[20px] xl:px-0">
         <form
           onSubmit={(event) => {
             event.preventDefault();
+            localStorage.setItem("searchText", searchText);
+
             setFilteredItems(
               items.filter((item) =>
                 item.title.toLowerCase().includes(searchText.toLowerCase())
@@ -26,11 +33,14 @@ const SearchResultsSearchBox = ({
           }}
         >
           <div className="flex gap-[16px]">
+            {console.log(searchText)}
             <input
               className="border-[0.5px] h-[48px] w-[286px] xl:w-[930px]"
               type="text"
               value={searchText}
-              onChange={(event) => setSearchText(event.target.value)}
+              onChange={(event) => {
+                setSearchText(event.target.value);
+              }}
             />
             <button className="bg-[#F0EEED] w-[50px] flex place-content-center p-[12px] xl:w-[176px] gap-[10px]">
               <img src="/save-search.svg" alt="" />

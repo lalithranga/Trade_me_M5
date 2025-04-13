@@ -21,7 +21,11 @@ const SearchResultsPage = () => {
   }, []);
 
   useEffect(() => {
-    setFilteredItems(items); // Update filteredItems when items changes
+    setFilteredItems(
+      items.filter((item) =>
+        item.title.toLowerCase().includes(searchText.toLowerCase())
+      )
+    );
   }, [items]);
 
   useEffect(() => {
@@ -60,7 +64,8 @@ const SearchResultsPage = () => {
         new Date(b.closing_date) - new Date(a.closing_date),
     };
 
-    const sortFunction = sortFunctions[event.target.value];
+    let sortFunction = sortFunctions[event.target.value];
+
     if (sortFunction) {
       const sortedItems = [...filteredItems].sort(sortFunction);
       setFilteredItems(sortedItems);
@@ -117,7 +122,7 @@ const SearchResultsPage = () => {
         <div className="w-[346px] max-w-screen-xl mx-auto xl:w-auto font-bold">
           <p className="">
             Showing {filteredItems.length} result
-            {filteredItems.length > 1 && "s"}
+            {filteredItems.length !== 1 && "s"}
           </p>
         </div>
 
