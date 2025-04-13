@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const SearchResultsSearchBox = () => {
+const SearchResultsSearchBox = ({
+  items,
+  setFilteredItems,
+  searchText,
+  setSearchText,
+}) => {
   const [refine, setRefine] = useState("");
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
@@ -10,11 +15,22 @@ const SearchResultsSearchBox = () => {
   return (
     <section className="bg-white">
       <div className="max-w-screen-xl mx-auto px-[20px] xl:px-0">
-        <form>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            setFilteredItems(
+              items.filter((item) =>
+                item.title.toLowerCase().includes(searchText.toLowerCase())
+              )
+            );
+          }}
+        >
           <div className="flex gap-[16px]">
             <input
               className="border-[0.5px] h-[48px] w-[286px] xl:w-[930px]"
               type="text"
+              value={searchText}
+              onChange={(event) => setSearchText(event.target.value)}
             />
             <button className="bg-[#F0EEED] w-[50px] flex place-content-center p-[12px] xl:w-[176px] gap-[10px]">
               <img src="/save-search.svg" alt="" />
