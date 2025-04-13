@@ -1,12 +1,11 @@
 import CheckoutCard from "../component/CheckoutCard";
-import TopHeader from "../component/TopHeader";
-import Footer from "../component/Footer";
+
 import { Link } from "react-router-dom";
 
 const ShippingPage = () => {
   return (
     <>
-      <TopHeader />
+      
       <main className="px-[24px] xl:px-[160px] pb-[64px]]">
         <h1 className="text-[20px] font-[700] py-[16px] leading-[24px] xl:pb-0">
           Shipping
@@ -84,12 +83,12 @@ const ShippingPage = () => {
             </p>
           </div>
           <div className="xl:pt-[16px]">
-            <Link to="/success">
+            <Link to="/search/success">
               <button className="mr-[16px] text-[16px] text-[#FFFFFF] bg-[#3E75CB] rounded-[5px] w-full xl:w-auto xl:px-[12px] h-[38px] mb-[12px] xl:h-[48px]">
                 Finalise payment and shipping
               </button>
             </Link>
-            <Link to="/payment">
+            <Link to="search">
               <button className="text-[16px] text-[#3E75CB] border border-[#3E75CB] rounded-[5px] w-full xl:w-auto xl:px-[12px] h-[38px] xl:h-[48px]">
                 Go back
               </button>
@@ -97,7 +96,7 @@ const ShippingPage = () => {
           </div>
         </div>
       </main>
-      <Footer />
+
     </>
   );
 };
