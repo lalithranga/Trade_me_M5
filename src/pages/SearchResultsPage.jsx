@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import ResultsItemCard from "../component/SearchResultsItemCard";
-import TopHeader from "../component/TopHeader";
-import Footer from "../Footer";
 import ResultsSearchBox from "../component/SearchResultsSearchBox";
 import { Link } from "react-router-dom";
 
