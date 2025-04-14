@@ -25,14 +25,14 @@ const SearchResultsSearchBox = ({
             );
           }}
         >
-          <div className="flex gap-[16px]">
-            <div className="flex">
+          <div className="flex gap-[8px] justify-between h-[48px]">
+            <div className="flex w-full">
               <div className="border-[0.5px] rounded-l-[4px] border-r-0 border-[#9D9996] w-[36px] flex place-content-center">
                 <img src="/search.svg" alt="Search Icon" className="w-[12px]" />
               </div>
 
               <input
-                className="border-y-[0.5px] border-[#9D9996] h-[48px] w-[286px] xl:w-[930px] outline-none"
+                className="border-y-[0.5px] border-[#9D9996] h-[48px] w-full outline-none"
                 type="text"
                 value={searchText}
                 onChange={(event) => {
@@ -50,9 +50,15 @@ const SearchResultsSearchBox = ({
               </button>
             </div>
 
-            <button className="bg-[#F0EEED] w-[50px] flex place-content-center p-[12px] xl:w-[176px] gap-[10px] rounded-[2px]">
-              <img src="/save-search.svg" alt="save search image" />
-              <span className="hidden xl:inline">Save this search</span>
+            <button className="bg-[#F0EEED] w-[50px] flex place-content-center p-[12px] xl:min-w-fit gap-[8px] rounded-[2px]">
+              <img
+                className="h-[24px]"
+                src="/save-search.svg"
+                alt="save search image"
+              />
+              <span className="hidden xl:inline text-[#3E74CB] text-[14px] font-bold">
+                Save this search
+              </span>
             </button>
           </div>
           <div className="py-[20px] flex flex-wrap gap-[4px]">

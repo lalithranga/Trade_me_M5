@@ -74,7 +74,7 @@ const SearchResultsPage = () => {
 
   return (
     <div>
-      <h1 className="max-w-screen-xl mx-auto px-[20px] xl:px-0 font-bold text-[20px]">
+      <h1 className="max-w-screen-xl mx-auto px-[20px] xl:px-0 font-bold text-[20px] mb-[14px]">
         Search Results
       </h1>
       <main className="bg-[#F5F5F5]">
