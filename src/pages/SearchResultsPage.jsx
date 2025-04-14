@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ResultsItemCard from "../component/SearchResultsItemCard";
-import ResultsSearchBox from "../component/SearchResultsSearchBox";
+import ResultsSearchBox from "../component/SearchResultsBox";
 import { Link } from "react-router-dom";
 
 const SearchResultsPage = () => {
@@ -46,8 +46,8 @@ const SearchResultsPage = () => {
 
   const handleSortChange = (event) => {
     const sortFunctions = {
-      "lowest-price": (a, b) => a.price - b.price,
-      "highest-price": (a, b) => b.price - a.price,
+      "price-ascending": (a, b) => a.price - b.price,
+      "price-descending": (a, b) => b.price - a.price,
       "lowest-shipping-cost": (a, b) => a.shipping_cost - b.shipping_cost,
       "highest-shipping-cost": (a, b) => b.shipping_cost - a.shipping_cost,
       "title-ascending": (a, b) => a.title.localeCompare(b.title),
@@ -84,49 +84,72 @@ const SearchResultsPage = () => {
           searchText={searchText}
           setSearchText={setSearchText}
         />
-        <section className="max-w-screen-xl mx-auto py-[20px] flex gap-[12px] place-content-center xl:place-content-start">
-          <select
-            className="h-[38px] w-[252px] border-[0.5px]"
-            onChange={handleSortChange}
-          >
-            <option value="title-ascending">Title Ascending</option>
-            <option value="title-descending">Title Decending</option>
-            <option value="location-ascending">Location Ascending</option>
-            <option value="location-descending">Location Decending</option>
-            <option value="lowest-price">Lowest Price</option>
-            <option value="highest-price">Higest Price</option>
-            <option value="lowest-shipping-cost">Lowest Shipping Cost</option>
-            <option value="highest-shipping-cost">Highest Shipping Cost</option>
-            <option value="closing-date-ascending">
-              Closing Date Ascending
-            </option>
-            <option value="closing-date-descending">
-              Closing Date Descending
-            </option>
-            <option value="estimated-delivery-ascending">
-              Esitmated Delivery Ascending
-            </option>
-            <option value="estimated-delivery-descending">
-              Esitmated Delivery Descending
-            </option>
-          </select>
-          <div className="flex">
-            <button className="bg-[#F0EEED] h-[38px] w-[42px] flex place-content-center p-[8px] border-[0.5px] rounded-l-[4px] border-[#9D9996]">
-              <img src="/view1.svg" alt="" />
-            </button>
-            <button className="bg-[#F0EEED] h-[38px] w-[42px] flex place-content-center p-[8px] border-[0.5px] rounded-r-[4px] border-[#9D9996]">
-              <img src="/view2.svg" alt="" />
-            </button>
+        <section className="max-w-screen-xl mx-auto xl:flex xl:flex-row-reverse justify-between">
+          <div className="flex justify-center py-[16px] gap-[16px]">
+            <div className="relative ">
+              <select
+                className="h-[38px] xl:h-[48px] w-[252px] border-[0.5px] border-[#65605D] appearance-none pr-[40px] pl-[8px] text-[16px] text-[#65605D] rounded-[4px] xl:text-[14px]"
+                onChange={handleSortChange}
+              >
+                <option value="title-ascending">Title (asc)</option>
+                <option value="title-descending">Title (desc)</option>
+                <option value="location-ascending">Location (asc)</option>
+                <option value="location-descending">Location (desc)</option>
+                <option value="price-ascending">Price (asc)</option>
+                <option value="price-descending">Price (desc)</option>
+                <option value="lowest-shipping-cost">
+                  Shipping Cost (asc)
+                </option>
+                <option value="highest-shipping-cost">
+                  Shipping Cost (desc)
+                </option>
+                <option value="closing-date-ascending">
+                  Closing Date (asc)
+                </option>
+                <option value="closing-date-descending">
+                  Closing Date (desc)
+                </option>
+                <option value="estimated-delivery-ascending">
+                  Esitmated Delivery (asc)
+                </option>
+                <option value="estimated-delivery-descending">
+                  Esitmated Delivery (desc)
+                </option>
+              </select>
+              <img
+                src="/arrow-down-blue.svg"
+                alt="Dropdown Icon"
+                className="absolute right-[12px] top-1/2 transform -translate-y-1/2 pointer-events-none"
+              />
+            </div>
+            <div className="flex">
+              <button className="bg-[#F0EEED] h-[38px] w-[42px] xl:h-[48px] xl:w-[100px] flex place-content-center p-[8px] border-[0.5px] rounded-l-[4px] border-[#9D9996] gap-[4px]">
+                <img
+                  className="h-[24px] self-center"
+                  src="/view1.svg"
+                  alt="list view image"
+                />
+                <span className="self-center hidden xl:inline">List</span>
+              </button>
+              <button className="bg-[#F0EEED] h-[38px] w-[42px] xl:h-[48px] xl:w-[100px] flex place-content-center p-[8px] border-[0.5px] rounded-r-[4px] border-[#9D9996] gap-[4px]">
+                <img
+                  className="h-[24px] self-center"
+                  src="/view2.svg"
+                  alt="gallery view image"
+                />
+                <span className="self-center hidden xl:inline">Gallery</span>
+              </button>
+            </div>
+          </div>
+          <div className="w-[346px] xl:w-auto font-bold flex mx-auto xl:mx-0">
+            <p className="self-center justify-center text-[12px] xl:text-[20px]">
+              Showing {filteredItems.length} result
+              {filteredItems.length !== 1 && "s"}
+            </p>
           </div>
         </section>
-        <div className="w-[346px] max-w-screen-xl mx-auto xl:w-auto font-bold">
-          <p className="">
-            Showing {filteredItems.length} result
-            {filteredItems.length !== 1 && "s"}
-          </p>
-        </div>
 
-        <section className="max-w-screen-xl mx-auto grid gap-[16px] justify-center xl:grid-cols-4 py-[32px]">
+        <section className="max-w-screen-xl mx-auto grid gap-[88px] justify-center xl:grid-cols-4 pt-[16px] pb-[88px]">
           {filteredItems.length > 0 &&
             filteredItems.map((item) => (
               <ResultsItemCard key={item._id} item={item} />
