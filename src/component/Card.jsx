@@ -5,7 +5,7 @@ import 'swiper/swiper-bundle.css';
 
 function Card() {
   return (
-    <div className="bg-[#f7f6f4] w-full px-4 py-1 lg:px-6">
+    <div className="w-full px-4 py-1 lg:px-6 font-inter">
       {/* Swiper for mobile and grid for larger screens */}
       <Swiper
         slidesPerView={1}
@@ -27,7 +27,7 @@ function Card() {
               <h3 className="text-indigo-600 font-bold text-lg md:text-xl lg:text-2xl mb-2">
                 Trending
               </h3>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-snug">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#5554D4]">
                 Shop last minute Xmas gifts!
               </h2>
             </div>
@@ -42,8 +42,13 @@ function Card() {
           <div className="bg-[#5850ec] rounded-xl shadow-sm p-6 text-white my-2 flex flex-col justify-between h-[320px] w-full">
             <div>
               <h3 className="font-bold text-lg md:text-xl lg:text-2xl mb-2">Property</h3>
+              <h2 className="text-xl md:text-[20px] lg:text-3xl font-semibold leading-snug">
+               We You choose,
+                
+              </h2>
               <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-snug">
-                You choose, we celebrate
+             
+                 we celebrate
               </h2>
             </div>
             <button className="mt-6 bg-white text-[#5850ec] font-semibold px-5 py-3 rounded hover:bg-gray-200 transition text-base md:text-lg w-full md:w-[200px]">

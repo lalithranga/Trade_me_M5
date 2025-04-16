@@ -79,7 +79,7 @@ function Header() {
 
         {/* Navigation Bar (Visible only on xl and larger screens) */}
         <div className="hidden xl:flex top-[260px] z-50 -mt-12 mx-auto max-w-screen-xl">
-          <div className="flex w-full lg:w-[2000px] md:w-[1400px] h-[60px] 2xl:h-[80px] rounded-lg outline outline-[10px] outline-gray-100 overflow-hidden">
+          <div className="flex w-full lg:w-[2000px] md:w-[1400px] h-[60px] 2xl:h-[80px] rounded-lg outline outline-[10px] outline-gray-100">
             <div className="flex-1 bg-red-600 flex justify-center items-center text-white font-bold text-2xl xl:text-3xl">
               Marketplace
             </div>

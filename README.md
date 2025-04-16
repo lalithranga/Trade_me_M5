@@ -1,12 +1,67 @@
-# React + Vite
+# TradeMe Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TradeMe is a responsive web page built using React with Vite as the build tool. The app is styled with Tailwind CSS and includes routing and UI enhancements using popular React libraries.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Vite
+- Tailwind CSS
+- React Router DOM
+- React Icons
+- Swiper
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+1. Clone the repository:
+   git clone https://github.com/your-username/trade-me-m5.git
+   cd trade-me-m5
+
+2. Install dependencies:
+   npm install
+
+### Running the App
+
+Start the development server:
+npm run dev
+
+The app will typically be available at:
+http://localhost:5173
+
+### Building for Production
+
+Build the app:
+npm run build
+
+The production-ready files will be in the dist/ folder.
+
+### Previewing the Production Build
+
+To preview the production build locally:
+npm run preview
+
+## Project Scripts
+
+- npm run dev – Start development server
+- npm run build – Build the app for production
+- npm run preview – Preview the production build
+
+## Fonts Used
+
+- Barlow Condensed
+- Inter
+- Poppins
+
+These fonts are included via the @fontsource package.
+
+## Suggested Folder Structure
+
+src/
+├── assets/         → Images and static files  
+├── components/     → Reusable components  
+├── pages/          → Page components  
+├── App.jsx         → Main application component  
+├── main.jsx        → Entry point  
+└── index.css       → Global styles and Tailwind config

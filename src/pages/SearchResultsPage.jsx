@@ -152,23 +152,28 @@ const SearchResultsPage = () => {
         <section className="max-w-screen-xl mx-auto grid gap-[88px] justify-center xl:grid-cols-4 pt-[16px] pb-[88px]">
           {filteredItems.length > 0 &&
             filteredItems.map((item) => (
-              <ResultsItemCard key={item._id} item={item} />
+              <ResultsItem  	Card key={item._id} item={item} />
             ))}
         </section>
 
         <div className="fixed right-[24px] bottom-[24px]">
-          <Link
-            to="/search/compare"
-            className="relative w-[90px] h-[36px] bg-[#3E74CB] text-white rounded-[16px] font-bold border border-[#3E74CB] flex items-center justify-center"
-          >
-            Compare
-            {count > 0 && (
-              <div className="absolute -top-2 -left-2 w-[24px] h-[24px] rounded-full border border-[#3E74CB] bg-white text-[#3E74CB] text-xs font-bold flex items-center justify-center">
-                {count < 10 ? `0${count}` : count}
-              </div>
-            )}
-          </Link>
-        </div>
+  <Link
+    to={count > 0 ? "/search/compare" : "#"}
+    className={`relative w-[90px] h-[36px] rounded-[16px] font-bold border flex items-center justify-center transition-colors duration-200 ${
+      count > 0
+        ? "bg-[#6FA5F3] border-[#6FA5F3] text-white cursor-pointer hover:bg-[#5a9fe0]"
+        : "bg-gray-300 border-gray-300 text-white cursor-not-allowed pointer-events-none"
+    }`}
+  >
+    Compare
+    {count > 0 && count < 3 && (
+      <div className="absolute -top-2 -left-2 w-[24px] h-[24px] rounded-full border border-[#3E74CB] bg-white text-[#3E74CB] text-xs font-bold flex items-center justify-center">
+        {`0${count}`}
+      </div>
+    )}
+  </Link>
+</div>
+
       </main>
     </div>
   );
