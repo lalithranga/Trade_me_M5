@@ -5,7 +5,7 @@ import 'swiper/swiper-bundle.css';
 
 function Card() {
   return (
-    <div className="w-full px-4 py-1 lg:px-6">
+    <div className="w-full px-4 py-1 lg:px-6 font-inter">
       {/* Swiper for mobile and grid for larger screens */}
       <Swiper
         slidesPerView={1}
