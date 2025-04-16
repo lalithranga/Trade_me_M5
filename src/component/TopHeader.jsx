@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMdListBox } from "react-icons/io";
+
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiPencil } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
@@ -39,9 +39,9 @@ function TopHeader() {
       <div className="flex flex-row bg-white mt-2 relative h-[40px] md:h-[50px] lg:h-[50px] xl:h-[58pxpx] 2xl:h-[60px] w-full mx-auto max-w-screen-xl justify-between items-center px-4 md:px-8">
         
         {/* Logo */}
-        <div className="w-[190px] h-[30px] md:w-[250px] md:h-[40px] lg:w-[300px] lg:h-[50px] xl:w-[200px] xl:h-[60px] 2xl:h-[60px]">
+        <div className="w-[160pxpx] h-[30pxpx] top-[61px] left-[160px]">
           <img
-            src="/image.jpg"
+            src="/trademe-logo.png"
             alt="logo"
             className="w-full h-full object-cover"
           />
@@ -52,7 +52,12 @@ function TopHeader() {
 
 {/* Watchlist */}
 <div className="flex flex-col items-center lg:flex-row lg:space-x-2">
-  <IoMdListBox className="text-[14px] md:text-[14px] lg:text-[16px]" />
+  <img
+    src="/Group.png"
+    alt="watchlist"
+    className="w-[14px] md:w-[14px] lg:w-[16px]"
+  />
+
   <span className="text-[14px] md:text-[14px] lg:text-[16px] font-inter text-[#9D9996]">Watchlist</span>
 </div>
 
