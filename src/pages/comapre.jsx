@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { clearCart, removeFromCart } from "../utils.jsx/compareCart";
 import { Link, useNavigate } from "react-router-dom";
+import "@fontsource/inter";
 
 function Compare() {
   const [items, setItems] = useState([]);
@@ -31,27 +32,24 @@ function Compare() {
       setLoading(false);
     }
   }, []);
-
+  
+  useEffect(() => {
+    if (!items.length && !loading) {
+      navigate("/search");
+    }
+  }, [items, loading, navigate]);
+  
   if (loading)
     return (
-      <div className="flex justify-center items-center h-64">
+      <div className="flex justify-center items-center h-64 font-inter">
         <p style={{ color: "#76716D" }} className="text-lg">
           Loading...
         </p>
       </div>
     );
 
-  if (!items.length)
-    return (
-      <div className="flex justify-center items-center h-64">
-        <p style={{ color: "#76716D" }} className="text-lg">
-          No items found in the cart to compare.
-        </p>
-      </div>
-    );
-
   return (
-    <div>
+    <div className="font-inter">
       <div className="bg-red-600 text-white text-sm font-semibold py-2 px-4">
         <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4 py-2">
           <div className="flex space-x-4">
@@ -60,7 +58,7 @@ function Compare() {
             <button className="hover:underline">Detail</button>
             <button className="hover:underline">Book a courier</button>
           </div>
-          <button className="text-white font-semibold px-4 py-1 rounded hover:bg-gray-100">
+          <button className="text-white font-semibold px-4 py-1 rounded hover:underline">
             List an item
           </button>
         </div>
@@ -68,7 +66,7 @@ function Compare() {
 
       <div className="max-w-screen-xl mx-auto px-4 py-6">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-xl font-semibold" style={{ color: "#76716D" }}>
+          <h1 className="text-xl font-semibold text-[#000000]">
             Compare listings
           </h1>
           <div className="flex space-x-2">
@@ -78,11 +76,11 @@ function Compare() {
               onClick={() => navigate("/search")}
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 mr-1"
+                xmlns="http://www.w3.org/2000/svg" 
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                className="h-4 w-4 mr-1"
               >
                 <path
                   strokeLinecap="round"
@@ -108,9 +106,9 @@ function Compare() {
         <div className="flex flex-wrap">
           {items.map((item, index) => (
             <div key={index} className="w-full md:w-1/2 lg:w-1/2 p-2">
-              <div className="border rounded-lg bg-white overflow-hidden relative">
+              <div className=" bg-white overflow-hidden relative">
                 <button
-                  className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-100"
+                  className="absolute top-2 right-2 rounded-full "
                   onClick={() => {
                     removeFromCart(item.title);
                     const updatedItems = items.filter(
@@ -123,27 +121,18 @@ function Compare() {
                     }
                   }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="#76716D"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                 <img
+                    src="/remove.png"
+                    alt="Remove"
+                    className="w-[40pxpx] h-[40px]  hover:text-blue-500"
+                  />
                 </button>
 
-                <div className="h-64 bg-gray-100 flex items-center justify-center">
+                <div className="h-[500px] flex items-center justify-center">
                   <img
                     src={item.image || "/api/placeholder/400/320"}
                     alt={item.title}
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full object-cover "
                   />
                 </div>
 
@@ -299,8 +288,8 @@ function Compare() {
                   <div className="border-t mt-4 pt-4 px-4 pb-6">
                     <div className="border rounded-lg p-4 text-center">
                       <img
-                        src="https://www.the-sun.com/wp-content/uploads/sites/6/2023/03/OP-OMF-FAKE-CAR-DEALER-.jpg"
-                        alt="Seller logo"
+                        src="/api/placeholder/400/320"
+                        alt="Seller profile"
                         className="w-16 h-16 mx-auto rounded-full object-cover mb-2"
                       />
                       <h4 className="font-semibold">Ashley</h4>
