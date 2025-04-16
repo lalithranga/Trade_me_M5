@@ -9,6 +9,7 @@ function ProductCard() {
     const fetchProduct = async () => {
       try {
         const response = await fetch("http://localhost:3000/api/auctionItem");
+
         const data = await response.json();
         setProducts(data);
         setLoading(false);
@@ -21,7 +22,7 @@ function ProductCard() {
   }, []);
 
   return (
-    <div className="w-full px-4 py-6 lg:px-6">
+    <div className="w-full px-4 py-6 lg:px-6 font-inter">
       <div className="max-w-screen-xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">Cool Auction</h2>
 
@@ -31,7 +32,7 @@ function ProductCard() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
   {products.map((product) => (
     <div className="flex flex-col w-full h-full bg-white rounded shadow " key={product._id}>
-      <div className="relative aspect-square w-full mb-4 ">
+      <div className="relative aspect-square w-full mb-4 h-[35=0px]">
         <img
           src={product.image || "/default-image.jpg"}
           alt={product.title}
