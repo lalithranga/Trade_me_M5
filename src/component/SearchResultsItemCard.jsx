@@ -19,6 +19,15 @@ const SearchResultsItemCard = ({
           src="./watchlist.svg"
           alt="watchlist corner image"
         />
+        <img
+          className="rounded-t-[8px] w-full h-full object-cover"
+          src={`https://picsum.photos/id/${
+            Math.floor(Math.random() * 100) + 1
+          }/${window.innerWidth >= 1280 ? 256 : 392}/${
+            window.innerWidth >= 1280 ? 208 : 282
+          }`}
+          alt="watchlist corner image"
+        />
       </section>
       <section className="bg-white p-[16px] xl:p-[8px] xl:rounded-b-[8px]">
         <div className="flex justify-between">
@@ -69,7 +78,12 @@ const SearchResultsItemCard = ({
             </button>
           </div>
           <div className="leading-[12px] xl:leading-[20px] text-right">
-            <Link to="/search/payment" className="text-[8px] text-[#9D9996] xl:text-[12px]">Buy Now</Link>
+            <Link
+              to="/search/payment"
+              className="text-[8px] text-[#9D9996] xl:text-[12px]"
+            >
+              Buy Now
+            </Link>
             <p className="font-bold text-[14px] xl:text-[16px]">${price}.00</p>
           </div>
         </div>
