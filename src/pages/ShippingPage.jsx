@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const ShippingPage = () => {
   return (
     <>
-      
       <main className="px-[24px] xl:px-[160px] pb-[64px]]">
         <h1 className="text-[20px] font-[700] py-[16px] leading-[24px] xl:pb-0">
           Shipping
@@ -88,7 +87,7 @@ const ShippingPage = () => {
                 Finalise payment and shipping
               </button>
             </Link>
-            <Link to="search">
+            <Link to="/search/payment">
               <button className="text-[16px] text-[#3E75CB] border border-[#3E75CB] rounded-[5px] w-full xl:w-auto xl:px-[12px] h-[38px] xl:h-[48px]">
                 Go back
               </button>
@@ -96,7 +95,6 @@ const ShippingPage = () => {
           </div>
         </div>
       </main>
-
     </>
   );
 };
