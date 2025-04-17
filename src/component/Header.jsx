@@ -29,7 +29,7 @@ function Header() {
               <h1 className="text-[36px] font-black font-['Barlow_Condensed'] mt-3 text-[#E7B2DA] leading-none md:text-[40px] lg:text-[65px] xl:text-[75px] 2xl:text-[85px]">
                 KIA ORA! READY TO
               </h1>
-              <h1 className="text-[36px] font-['Barlow_Condensed'] text-[#E7B2DA] ml-2 mt-3 leading-none font-bold md:text-[40px] lg:text-[65px] xl:text-[75px] 2xl:text-[85px]">
+              <h1 className="text-[36px] font-['Barlow_Condensed'] text-[#E7B2DA] xl:ml-2 mt-3 leading-none font-bold md:text-[40px] lg:text-[65px] xl:text-[75px] 2xl:text-[85px]">
                 FIND YOUR WAY!
               </h1>
             </div>
