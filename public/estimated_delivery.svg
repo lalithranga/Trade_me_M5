@@ -1,0 +1,30 @@
+<svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="22" height="20" fill="#F5F5F5"/>
+<g id="Search page - mobile" clip-path="url(#clip0_0_1)">
+<rect width="393" height="2684" transform="translate(-21 -740)" fill="white"/>
+<rect id="Grey bg" x="-21" y="-485" width="392" height="2204" fill="#F5F5F5"/>
+<g id="List card in search">
+<g id="Rectangle 135" filter="url(#filter0_d_0_1)">
+<rect x="-21" y="-380" width="392" height="463" fill="white"/>
+</g>
+<g id="mdi:store-complete-outline">
+<path id="Vector" d="M16.9714 10.3649C17.5966 10.3649 18.1951 10.4686 18.7578 10.644V9.56764L17.8646 5.58127H3.57292L2.67969 9.56764V11.1622H3.57292V15.9458H11.6924C11.6477 15.6827 11.612 15.4196 11.612 15.1485C11.612 14.1679 11.9425 13.267 12.5052 12.5096V11.1622H14.0148C14.8633 10.6599 15.8727 10.3649 16.9714 10.3649ZM10.7188 14.3513H5.35938V11.1622H10.7188V14.3513ZM4.50188 9.56764L5.03781 7.17582H16.3997L16.9356 9.56764H4.50188ZM17.8646 4.784H3.57292V3.18945H17.8646V4.784ZM20.0977 13.7533L15.8548 17.5404L13.3984 15.1485L14.4346 14.2237L15.8548 15.4914L19.0615 12.6292L20.0977 13.7533Z" fill="#9D9996"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-25" y="-380" width="400" height="471" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="393" height="2684" fill="white" transform="translate(-21 -740)"/>
+</clipPath>
+</defs>
+</svg>

@@ -34,7 +34,6 @@ const SuccessPage = () => {
           </Link>
         </div>
       </main>
-      <Footer />
     </>
   );
 };

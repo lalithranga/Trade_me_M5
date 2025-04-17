@@ -15,8 +15,11 @@ import { BiPencil } from "react-icons/bi"; // Start a Listing Icon
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Header() {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <>
       <div className="flex flex-col h-[500px]">
@@ -38,21 +41,23 @@ function Header() {
             <div className="relative flex flex-row mt-8 w-full md:w-[600px]">
               <div className="relative w-full">
                 <input
+                  onChange={(event) => setSearchText(event.target.value)}
                   type="text"
+                  value={searchText}
                   placeholder="Search all of text me"
                   className="bg-white h-[50px] rounded-lg pl-10 pr-[80px] text-[20px] md:text-[22px] w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mr-6"
                 />
                 <div className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400">
-                  <IoIosSearch size={26} 
-                  className=""
-                  />
+                  <IoIosSearch size={26} className="" />
                 </div>
-
                 {/* Search button */}
                 <div className="absolute right-[4px] top-1/2 transform -translate-y-1/2">
                   <Link
                     to="/search"
                     className="bg-[#279be9] w-[100px] h-[45px] rounded-lg flex items-center justify-center px-3 text-[17px]"
+                    onClick={() =>
+                      localStorage.setItem("searchText", searchText)
+                    }
                   >
                     {/* Icon for small screens */}
                     <IoIosSearch
