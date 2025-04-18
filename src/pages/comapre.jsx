@@ -32,13 +32,13 @@ function Compare() {
       setLoading(false);
     }
   }, []);
-  
+
   useEffect(() => {
     if (!items.length && !loading) {
       navigate("/search");
     }
   }, [items, loading, navigate]);
-  
+
   if (loading)
     return (
       <div className="flex justify-center items-center h-64 font-inter">
@@ -76,7 +76,7 @@ function Compare() {
               onClick={() => navigate("/search")}
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg" 
+                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -121,7 +121,7 @@ function Compare() {
                     }
                   }}
                 >
-                 <img
+                  <img
                     src="/remove.png"
                     alt="Remove"
                     className="w-[40pxpx] h-[40px]  hover:text-blue-500"
@@ -205,7 +205,10 @@ function Compare() {
                       <span>{item.watchlisted || "15"} others watchlisted</span>
                     </div>
 
-                    <button className="flex items-center" style={{ color: "#3E74CB" }}>
+                    <button
+                      className="flex items-center"
+                      style={{ color: "#3E74CB" }}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 mr-1"
@@ -227,7 +230,9 @@ function Compare() {
                   <div className="mb-4">
                     <div className="text-center mb-2">
                       <span className="text-xs">Buy now</span>
-                      <p className="text-xl font-bold">${item.price || "79.90"}</p>
+                      <p className="text-xl font-bold">
+                        ${item.price || "79.90"}
+                      </p>
                     </div>
                     <Link to="/search/payment">
                       <button
@@ -237,7 +242,10 @@ function Compare() {
                         Buy Now
                       </button>
                     </Link>
-                    <button style={{ color: "#3E74CB" }} className="w-full py-2">
+                    <button
+                      style={{ color: "#3E74CB" }}
+                      className="w-full py-2"
+                    >
                       Add to Cart
                     </button>
                   </div>

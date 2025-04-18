@@ -74,7 +74,10 @@ const SearchResultsPage = () => {
 
   return (
     <div>
-      <h1 className="max-w-screen-xl mx-auto px-[20px] xl:px-0 font-bold text-[20px] mb-[14px]">
+      <h1
+        id="top"
+        className="max-w-screen-xl mx-auto px-[20px] xl:px-0 font-bold text-[20px] mb-[14px]"
+      >
         Search Results
       </h1>
       <main className="bg-[#F5F5F5]">
@@ -155,7 +158,38 @@ const SearchResultsPage = () => {
               <ResultsItemCard Card key={item._id} item={item} />
             ))}
         </section>
-
+        <section className="flex justify-around max-w-screen-xl xl:mx-[480px] xl:text-[14px]">
+          <div></div>
+          <div className="text-center">
+            <p className="text-[#65605D] text-center xl:hidden">
+              Page 1 of 963
+            </p>
+            <nav className="text-[#3E75CB] xl:flex xl:gap-[20px] xl:max-w-screen-xl hidden">
+              <Link to="/">1</Link>
+              <Link to="/">2</Link>
+              <Link to="/">3</Link>
+              <Link to="/">4</Link>
+              <Link to="/">5</Link>
+              <Link to="/">6</Link>
+              <Link to="/">7</Link>
+              <Link to="/">...</Link>
+              <Link to="/">960</Link>
+            </nav>
+            <div className="flex mb-[22px] mt-[48px] justify-center gap-[3px]">
+              <img
+                className="hidden xl:block"
+                src="./arrow-up.svg"
+                alt="Image of an upward facing arrow"
+              />
+              <a href="#top" className="block text-[#3E74CB]">
+                Back to top
+              </a>
+            </div>
+          </div>
+          <Link to="/" className="text-[#3E74CB]">
+            Next
+          </Link>
+        </section>
         <div className="fixed right-[24px] bottom-[24px]">
           <Link
             to={count > 0 ? "/search/compare" : "#"}

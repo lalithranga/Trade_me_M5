@@ -69,7 +69,12 @@ const SearchResultsItemCard = ({
             </button>
           </div>
           <div className="leading-[12px] xl:leading-[20px] text-right">
-            <Link to="/search/payment" className="text-[8px] text-[#9D9996] xl:text-[12px]">Buy Now</Link>
+            <Link
+              to="/search/payment"
+              className="text-[8px] text-[#9D9996] xl:text-[12px]"
+            >
+              Buy Now
+            </Link>
             <p className="font-bold text-[14px] xl:text-[16px]">${price}.00</p>
           </div>
         </div>
