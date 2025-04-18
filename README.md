@@ -45,8 +45,6 @@ npm run preview
 ## Project Scripts
 
 - npm run dev – Start development server
-- npm run build – Build the app for production
-- npm run preview – Preview the production build
 
 ## Fonts Used
 
