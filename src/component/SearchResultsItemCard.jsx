@@ -19,15 +19,6 @@ const SearchResultsItemCard = ({
           src="./watchlist.svg"
           alt="watchlist corner image"
         />
-        <img
-          className="rounded-t-[8px] w-full h-full object-cover"
-          src={`https://picsum.photos/id/${
-            Math.floor(Math.random() * 100) + 1
-          }/${window.innerWidth >= 1280 ? 256 : 392}/${
-            window.innerWidth >= 1280 ? 208 : 282
-          }`}
-          alt="watchlist corner image"
-        />
       </section>
       <section className="bg-white p-[16px] xl:p-[8px] xl:rounded-b-[8px]">
         <div className="flex justify-between">
