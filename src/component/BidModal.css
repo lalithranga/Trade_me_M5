@@ -1,0 +1,391 @@
+.modal-overlay {
+    position: fixed;
+    /* z-index: 1; */
+    z-index: 999; /* Ensure the modal is on top of other elements */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    align-items: center; /* centers vertically */
+}
+
+.modal-content {
+    /* position: absolute; */
+    position: relative;
+    width: 736px;
+    height: 755px;
+    background-color: #ffffff;
+    border: 1px solid #888;
+    /* top: 138px;
+    left: 325px; */
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 16px; /* 👈 Rounded corners */
+    z-index: 1000; /* Higher than overlay content */
+}
+
+/* Title text (Place a bid) */
+.modal-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin: 0; /* Optional: removes default h3 margin */
+}
+
+/* Title for the bidding card */
+.your-bid-label {
+    color: #8a8685;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.05em; /* 👈 -5% as em unit */
+    vertical-align: middle;
+    margin: 16px 0 8px; /* Optional spacing */
+}
+
+/* The bidding input box part of the modal */
+.bid-input-row {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* space between input and toggle */
+    margin-top: 8px;
+}
+
+.bid-input {
+    width: 348px;
+    height: 47px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; /* Light grey border */
+    padding: 0 12px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Toggle Switch Container */
+.toggle-switch {
+    position: relative;
+    width: 39px;
+    height: 20px;
+    display: inline-block;
+}
+
+/* Hide the default checkbox */
+.toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider (the visible part of the toggle) */
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 10px;
+    border: 0.5px solid #aaa;
+    transition: background-color 0.2s;
+}
+
+/* The circle (ellipse) inside the toggle */
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Label for the toggle switch */
+.auto-bid-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.05em; /* 👈 -5% */
+    vertical-align: middle;
+    color: #8a8685;
+}
+
+/* More info button */
+.more-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer; /* Optional: adds pointer effect */
+    margin-left: 12px; /* space between "Auto-bid" and "More info" */
+}
+
+.more-info-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    vertical-align: middle;
+    color: #3e75cb; /* Optional: adds clickable look */
+}
+
+.down-arrow-icon {
+    width: 5px; /* tweak to match the style of the arrow */
+    height: 5px;
+}
+
+/* When the checkbox is checked, move the circle right */
+.toggle-checkbox:checked + .toggle-slider {
+    background-color: #4caf50; /* active green background */
+}
+
+.toggle-checkbox:checked + .toggle-slider::before {
+    transform: translateX(19px);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Shipping radio buttons section BEGINNING */
+.shipping-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    vertical-align: middle;
+    margin-top: 16px;
+    color: #8a8685;
+}
+
+.shipping-options {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #8a8685;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-option input[type='radio'] {
+    opacity: 0;
+    position: absolute;
+}
+
+.custom-radio {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 0.5px solid #8a8685;
+    display: inline-block;
+    position: relative;
+}
+
+/* When selected: show a filled inner circle */
+.radio-option input[type='radio']:checked + .custom-radio::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: #3e75cb; /* Or your brand color */
+    border-radius: 50%;
+}
+/* Shipping radio buttons section END */
+
+/* Payment options section BEGINNING */
+.payment-card {
+    margin-top: 14px;
+    /* padding: 16px; */
+    background-color: #f8f8f8; /* light card background */
+    border-radius: 4px;
+}
+
+.payment-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+    margin: 0;
+    color: #8a8685;
+}
+
+.payment-options {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+    margin: 0;
+    margin-top: 14px;
+    color: #8a8685;
+}
+
+.payment-legal {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+    margin: 0;
+    margin-top: 12px;
+    color: #8a8685;
+}
+/* Payment options section END */
+
+/* Reminders section BEGINNING */
+.reminders-card {
+    margin-top: 24px;
+    /* padding: 16px; */
+    background-color: #f8f8f8; /* Light background like payment card */
+    /* border-radius: 4px; */
+}
+
+.reminders-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+    margin: 0;
+    color: #8a8685;
+}
+
+.custom-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+    color: #8a8685;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hide default checkbox */
+.custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create custom checkbox box */
+.checkmark {
+    width: 24px;
+    height: 24px;
+    border: 0.5px solid #8a8685;
+    border-radius: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Add tick mark when checked */
+.custom-checkbox:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid #3e75cb;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+/* Reminders section END */
+
+/* Place a bid buttons at the very bottom */
+.modal-buttons {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.place-bid-btn,
+.go-back-btn {
+    width: 113 px;
+    height: 48px;
+    top: 687px;
+    left: 21px;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.place-bid-btn {
+    background-color: #3e75cb; /* Green */
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+}
+
+.go-back-btn {
+    background-color: #ffffff; /* Light gray */
+    color: #3e75cb;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+    border: 0.5px solid #3e75cb;
+}
